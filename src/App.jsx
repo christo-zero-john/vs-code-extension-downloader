@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GetExtensionLink from "./components/GetExtensionLink";
 import Disclaimer from "./components/Disclaimer";
 import TermsAndConditions from "./components/TermsAndConditions";
+import TotalVisitors from "./components/totalVisitors";
 
 function App() {
   const [link, setLink] = useState("");
@@ -12,6 +13,10 @@ function App() {
       <h1 className="text-dark text-center">
         Visual Studio Code Extension Downloader
       </h1>
+
+      <div className="">
+        <TotalVisitors />
+      </div>
 
       <GetExtensionLink
         link={{
@@ -24,7 +29,7 @@ function App() {
         }}
       />
       <Disclaimer />
-      
+
       <TermsAndConditions />
     </div>
   );
