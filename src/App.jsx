@@ -1,37 +1,22 @@
-import React, { useState } from "react";
-import GetExtensionLink from "./components/GetExtensionLink";
-import Disclaimer from "./components/Disclaimer";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 import TermsAndConditions from "./components/TermsAndConditions";
-import TotalVisitors from "./components/totalVisitors";
+import DownloadAsBundle from "./components/DownloadAsBundle";
+import Docs from "./components/Docs";
+import Sponsor from "./components/Sponsor";
 
 function App() {
-  const [link, setLink] = useState("");
-  const [downloadLink, setDownloadLink] = useState("");
-
   return (
-    <div className="en-Oxanium container-fluid">
-      <h1 className="text-dark text-center">
-        Visual Studio Code Extension Downloader
-      </h1>
-
-      <div className="">
-        <TotalVisitors />
-      </div>
-
-      <GetExtensionLink
-        link={{
-          var: link,
-          set: setLink,
-        }}
-        downloadLink={{
-          var: downloadLink,
-          set: setDownloadLink,
-        }}
-      />
-      <Disclaimer />
-
-      <TermsAndConditions />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/download-bundle" element={<DownloadAsBundle />} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="/sposnor" element={<Sponsor />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
