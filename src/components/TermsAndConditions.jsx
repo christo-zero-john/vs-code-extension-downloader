@@ -3,8 +3,9 @@ import React from "react";
 function TermsAndConditions() {
   return (
     <div className="text-uppercase">
-      <h1 className="text-center">
-        Terms and Conditions for VS Code Extension Downloader
+      <h1 className="text-center fs-4">
+        Terms and Conditions to use{" "}
+        <span className="text-primary">VS Code Extension Downloader</span>
       </h1>
 
       <p className="">
